@@ -134,7 +134,7 @@ class ProvenSession {
 		return exchanges;
 	}*/
 
-	ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws NullExchangeInfoException {
+	ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws Exception {
 	
 		Exchange exchange;
 		try {

@@ -107,8 +107,9 @@ public interface Exchange {
 	 *            the provenance message
 	 * @param sessionInfo 
 	 * @return true if the message was successfully added, false otherwise
+	 * @throws Exception 
 	 */
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId);
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) throws Exception;
 
 	/**
 	 * Adds provided messages to the exchange.

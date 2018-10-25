@@ -317,12 +317,11 @@ public abstract class Producer implements ProvenStatus {
 	 *            the provenance message to send
 	 * 
 	 * @return true if the provenance message was sent
-	 * @throws NullExchangeInfoException 
-	 * 
+	 * @throws Exception 
 	 * @throws NullTermValueException
 	 *             if a message term has a null value
 	 */
-	public ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws SendMessageException, NullExchangeInfoException {
+	public ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws Exception {
 
 		/*if(registration.provenContext.getProvenInfo().isSaveMessagesInFile())
 		{

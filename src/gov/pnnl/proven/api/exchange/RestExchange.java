@@ -126,12 +126,13 @@ class RestExchange implements Exchange {
 	 * generated from the provided provenance message and then POSTed to the exchange. This method
 	 * will return true if the POST response is an HTTP Success 2xx code, indicating the message was
 	 * added.
+	 * @throws Exception 
 	 * 
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
 	@Override
 
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, final ProvenMessage message, final SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, final ProvenMessage message, final SessionInfo sessionInfo, String requestId) throws Exception {
 
 				
 //		final String ADD_SERVICE_PATH = "/provenance/" + provenanceInfo.getContext();
@@ -206,6 +207,7 @@ class RestExchange implements Exchange {
 		} catch (Exception e) {
 			System.out.println("\nError while calling REST Service");
 			System.out.println(e);
+			throw e;
 		}
 		return pr;
 		

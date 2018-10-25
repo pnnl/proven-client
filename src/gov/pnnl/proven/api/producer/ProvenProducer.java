@@ -128,7 +128,7 @@ public class ProvenProducer extends Producer{
 		messageInfo = new MessageInfo(domain, name,source, Keywords);
 	}
 
-	public ProvenResponse sendMessage(String message, String requestId) throws InvalidProvenMessageException, SendMessageException, NullExchangeInfoException {
+	public ProvenResponse sendMessage(String message, String requestId) throws Exception {
 
 		ProvenMessage pm;
 		if(messageInfo != null) {			
