@@ -109,8 +109,24 @@ public interface Exchange {
 	 * @return true if the message was successfully added, false otherwise
 	 * @throws Exception 
 	 */
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) throws Exception;
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String requestId) throws Exception;
 
+	
+	/**
+	 * Adds the provided message to the exchange.
+	 * 
+	 * @param exchangeInfo
+	 *            the exchange's information 
+	 * @param message
+	 *            the provenance message
+	 * @param sessionInfo 
+	 * @return true if the message was successfully added, false otherwise
+	 * @throws Exception 
+	 */
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) throws Exception;
+	
+	
+	
 	/**
 	 * Adds provided messages to the exchange.
 	 * 
@@ -120,6 +136,9 @@ public interface Exchange {
 	 *            the provenance messages
 	 * @return true if the messages were successfully added, false otherwise
 	 */
+	
+
+	
 	public boolean addProvenData(ExchangeInfo exchangeInfo, List<ProvenMessage> messages);
 
 }

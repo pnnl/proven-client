@@ -140,11 +140,18 @@ public class MqProducer {
 			message.setStringProperty("requestId", requestId);
 		messageProducer.send(message);
 	}
-	//Log errors to log mananger
-	/*public void sendLogToGridAPPSD(LogMessage logMessage) throws JMSException{
-		Destination topic = session.createTopic("goss.gridappsd.proven.log");
+	
+	public void sendMessage(String provenMessage, String requestId) throws JMSException{
+		
+		
+		Topic topic = null;
+		topic = session.createTopic(MessageTopic.Disclosure.getTopicName());
 		MessageProducer messageProducer = session.createProducer(topic);
 		Message message = session.createObjectMessage(provenMessage);
+		if(requestId != null)
+			message.setStringProperty("requestId", requestId);
 		messageProducer.send(message);
-	}*/
+	}
+	
+
 }

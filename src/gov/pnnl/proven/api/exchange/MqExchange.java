@@ -117,6 +117,25 @@ class MqExchange implements Exchange {
 		return null;		
 		
 	}
+	
+	
+	/**
+	 * @return 
+	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
+	 */
+	@Override
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String requestId) {
+		MqProducer mqProducer = new MqProducer(exchangeInfo);
+		try {
+			mqProducer.sendMessage(message, requestId);
+		} catch (JMSException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;		
+		
+	}
+	
 	public void getProvenResults(ExchangeInfo exchangeInfo, String requestId) {
 		MqConsumer mqConsumer = new MqConsumer(exchangeInfo, requestId);	
 		

@@ -264,6 +264,59 @@ class RestExchange implements Exchange {
 		
 	}
 
+	
+	/**
+	 * Adds a new provenance message to a REST based exchange. A JSON-LD message is first
+	 * generated from the provided provenance message and then POSTed to the exchange. This method
+	 * will return true if the POST response is an HTTP Success 2xx code, indicating the message was
+	 * added.
+	 * @throws Exception 
+	 * 
+	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
+	 */
+	@Override
+
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, final String message, final SessionInfo sessionInfo, String requestId) throws Exception {
+
+				
+
+		ProvenResponse pr = new ProvenResponse();
+	
+		try {
+
+
+			URI uri = new URI(exchangeInfo.getServicesUri());
+	        Client client = ClientBuilder.newClient();
+	        
+	        ProvenMessageResponse response = client.target(uri).
+	          request(MediaType.APPLICATION_JSON).
+	          accept(MediaType.APPLICATION_JSON).
+	          post(Entity.entity(message, MediaType.APPLICATION_JSON), ProvenMessageResponse.class);
+	        System.out.println(response.getCode());
+
+	        pr.code = response.getCode();
+	        pr.status = response.getStatus();
+	        pr.data = response.getResponse();
+
+	        pr.error = response.getReason();
+	        
+	        pr.responsecomplete = true;
+	    
+						
+						
+
+		} catch (Exception e) {
+			System.out.println("\nError while calling REST Service");
+			System.out.println(e);
+			throw e;
+		}
+		return pr;
+		
+		
+		
+	}
+	
+	
 	/*private String getExchange(ExchangeInfo exchangeInfo) {
 		// TODO Auto-generated method stub
 		List<String> exchanges = exchangeInfo.getExchangeUrls();

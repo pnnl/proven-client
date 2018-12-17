@@ -105,6 +105,7 @@ import gov.pnnl.proven.api.exchange.ExchangeInfo;
 import gov.pnnl.proven.message.ProvenMessage;
 
 
+
 /**
  * Provides services for management of a provenance production session. A ProvenanceProducer can
  * create and send provenance messages to their registered provenance server.
@@ -343,6 +344,41 @@ public abstract class Producer implements ProvenStatus {
 		
 	}
 	
+
+	/**
+	 * Sends the provided provenance message to this producer's provenance exchange. Before sending
+	 * the message a check is made to ensure all message terms have been set, that is, they all have
+	 * non null values.
+	 * 
+	 * @param message
+	 *            the provenance message to send
+	 * 
+	 * @return true if the provenance message was sent
+	 * @throws Exception 
+	 * @throws NullTermValueException
+	 *             if a message term has a null value
+	 */
+	public ProvenResponse sendMessage(String message, ExchangeInfo exchangeInfo, String requestId) throws Exception {
+
+		/*if(registration.provenContext.getProvenInfo().isSaveMessagesInFile())
+		{
+
+			//Files.write(Paths.get("./messages.txt"), message.generateJsonLd().getBytes());
+			PrintWriter out;
+			try {
+				out = new PrintWriter(new BufferedWriter(new FileWriter("messages.txt", true)));
+				out.println(message.getMessage());
+				out.close();	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+
+		}
+		else*/
+		return registration.provenSession.sendMessage(message, exchangeInfo, requestId);
+		
+	}
 	
 		
 	@Override
