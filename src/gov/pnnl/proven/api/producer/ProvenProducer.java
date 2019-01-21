@@ -128,6 +128,12 @@ public class ProvenProducer extends Producer{
 		messageInfo = new MessageInfo(domain, name,source, Keywords);
 	}
 
+	
+	public ProvenResponse sendBulkMessage(String message, String requestId) throws Exception {
+		return sendMessage(message, exchangeInfo, requestId);  
+		
+	}
+	
 	public ProvenResponse sendMessage(String message, String requestId) throws Exception {
 
 		ProvenMessage pm;
