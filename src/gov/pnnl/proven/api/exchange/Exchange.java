@@ -89,9 +89,10 @@ import java.util.List;
 
 /**
  * 
- * Provides support for a ProvenanceProducer's interaction with a provenance exchange. The exchange
- * represents a collection area for provenance messages, enabling loosely coupled communication
- * between a provenance producer and it's registered provenance server (i.e. consumer).
+ * Provides support for a ProvenanceProducer's interaction with a provenance
+ * exchange. The exchange represents a collection area for provenance messages,
+ * enabling loosely coupled communication between a provenance producer and it's
+ * registered provenance server (i.e. consumer).
  * 
  * @author d3j766
  *
@@ -102,31 +103,30 @@ public interface Exchange {
 	 * Adds the provided message to the exchange.
 	 * 
 	 * @param exchangeInfo
-	 *            the exchange's information 
+	 *            the exchange's information
 	 * @param message
 	 *            the provenance message
-	 * @param sessionInfo 
+	 * @param sessionInfo
 	 * @return true if the message was successfully added, false otherwise
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String requestId) throws Exception;
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo,
+			String measurementName, String instanceId) throws Exception;
 
-	
 	/**
 	 * Adds the provided message to the exchange.
 	 * 
 	 * @param exchangeInfo
-	 *            the exchange's information 
+	 *            the exchange's information
 	 * @param message
 	 *            the provenance message
-	 * @param sessionInfo 
+	 * @param sessionInfo
 	 * @return true if the message was successfully added, false otherwise
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) throws Exception;
-	
-	
-	
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo,
+			String requestId) throws Exception;
+
 	/**
 	 * Adds provided messages to the exchange.
 	 * 
@@ -136,9 +136,7 @@ public interface Exchange {
 	 *            the provenance messages
 	 * @return true if the messages were successfully added, false otherwise
 	 */
-	
 
-	
 	public boolean addProvenData(ExchangeInfo exchangeInfo, List<ProvenMessage> messages);
 
 }
