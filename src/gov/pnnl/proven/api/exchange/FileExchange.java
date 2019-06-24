@@ -98,28 +98,26 @@ import java.util.List;
  */
 class FileExchange implements Exchange {
 
-
-
 	/**
-	 * @return 
+	 * @return
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
 	@Override
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo,
+			String requestId) {
 		throw new UnsupportedOperationException();
 	}
 
-	
 	/**
-	 * @return 
+	 * @return
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
 	@Override
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo,
+			String measurementName, String instanceId) {
 		throw new UnsupportedOperationException();
 	}
-	
-	
+
 	/**
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
@@ -127,6 +125,5 @@ class FileExchange implements Exchange {
 	public boolean addProvenData(ExchangeInfo exchangeInfo, List<ProvenMessage> messages) {
 		throw new UnsupportedOperationException();
 	}
-
 
 }
