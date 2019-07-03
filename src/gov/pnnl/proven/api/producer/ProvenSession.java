@@ -178,7 +178,7 @@ class ProvenSession {
 
 	}
 	
-	ProvenResponse sendMessage(String message, ExchangeInfo exchangeInfo, String requestId) throws Exception {
+	ProvenResponse sendMessage(String message, ExchangeInfo exchangeInfo, String measurementName, String instanceId) throws Exception {
 		
 		Exchange exchange;
 		try {
@@ -188,7 +188,7 @@ class ProvenSession {
 		throw new NullExchangeInfoException();
 		}
 
-		return exchange.addProvenData(exchangeInfo, message, sessionInfo, requestId);
+		return exchange.addProvenData(exchangeInfo, message, sessionInfo, measurementName, instanceId);
 		
 		//use Round Robin for load balancing
 		//Round robin Implementation
