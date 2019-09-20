@@ -162,7 +162,7 @@ class RestExchange implements Exchange {
 			ProvenMessageResponse response = client.target(uri).request(MediaType.APPLICATION_JSON)
 					.accept(MediaType.APPLICATION_JSON)
 					.post(Entity.entity(message, MediaType.APPLICATION_JSON), ProvenMessageResponse.class);
-			log.info("Response Code: "+ response.getCode());
+			log.debug("Response Code: "+ response.getCode());
 
 			pr.code = response.getCode();
 			pr.status = response.getStatus();
@@ -291,7 +291,7 @@ class RestExchange implements Exchange {
 					.request(MediaType.APPLICATION_JSON)
 					.accept(MediaType.APPLICATION_JSON)
 					.post(Entity.entity(message, MediaType.APPLICATION_JSON), ProvenMessageResponse.class);
-			log.info("Response Code: " + response.getCode());
+			log.debug("Response Code: " + response.getCode());
 
 			pr.code = response.getCode();
 			pr.status = response.getStatus();
