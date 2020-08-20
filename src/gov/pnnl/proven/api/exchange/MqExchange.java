@@ -97,7 +97,7 @@ import javax.jms.JMSException;
  * 
  * @author d3j766
  *
- */
+ */ 
 class MqExchange implements Exchange {
 
 

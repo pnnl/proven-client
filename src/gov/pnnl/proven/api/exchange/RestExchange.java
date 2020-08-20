@@ -111,7 +111,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author d3j766
  *
- */
+ */ 
 class RestExchange implements Exchange {
 
 	private final Logger log = LoggerFactory.getLogger(RestExchange.class);

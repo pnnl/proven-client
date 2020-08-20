@@ -357,7 +357,7 @@ public abstract class Producer implements ProvenStatus {
 	 * @throws Exception 
 	 * @throws NullTermValueException
 	 *             if a message term has a null value
-	 */
+	 */ 
 	public ProvenResponse sendMessage(String message, ExchangeInfo exchangeInfo, String measurementName, String instanceId, String simulationId) throws Exception {
 
 		/*if(registration.provenContext.getProvenInfo().isSaveMessagesInFile())
