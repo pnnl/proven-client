@@ -271,7 +271,7 @@ class RestExchange implements Exchange {
 	@Override
 
 	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, final String message, final SessionInfo sessionInfo,
-			String measurementName, String instanceId) throws Exception {
+			String measurementName, String instanceId, String simulationId) throws Exception {
 
 		ProvenResponse pr = new ProvenResponse();
 
@@ -283,6 +283,7 @@ class RestExchange implements Exchange {
 			ProvenMessageResponse response = client.target(uri)
 					.queryParam("measurementName", measurementName)
 					.queryParam("instanceId", instanceId)
+					.queryParam("simulationId", simulationId)
 					.request(MediaType.APPLICATION_JSON)
 					.accept(MediaType.APPLICATION_JSON)
 					.post(Entity.entity(message, MediaType.APPLICATION_JSON), ProvenMessageResponse.class);

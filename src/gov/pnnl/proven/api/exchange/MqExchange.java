@@ -124,7 +124,7 @@ class MqExchange implements Exchange {
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
 	@Override
-	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String measurementName, String instanceId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo, String measurementName, String instanceId, String simulationId) {
 		
 		throw new UnsupportedOperationException();
 		

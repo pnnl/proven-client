@@ -114,7 +114,7 @@ class FileExchange implements Exchange {
 	 */
 	@Override
 	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo,
-			String measurementName, String instanceId) {
+			String measurementName, String instanceId, String SimulationId) {
 		throw new UnsupportedOperationException();
 	}
 

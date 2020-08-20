@@ -111,7 +111,7 @@ public interface Exchange {
 	 * @throws Exception
 	 */
 	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, String message, SessionInfo sessionInfo,
-			String measurementName, String instanceId) throws Exception;
+			String measurementName, String instanceId,  String simulationId) throws Exception;
 
 	/**
 	 * Adds the provided message to the exchange.
