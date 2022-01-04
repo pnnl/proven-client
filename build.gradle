@@ -83,7 +83,7 @@ task fatJar(type: Jar) {
  
  dependencies {
 	 compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.1'
-	 compile group: 'gov.pnnl.proven', name: 'proven-message', version: '0.4'
+	 compile group: 'gov.pnnl.proven', name: 'proven-message', version: '0.5'
 	 compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.1'
 	 compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.1'
 	 compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
