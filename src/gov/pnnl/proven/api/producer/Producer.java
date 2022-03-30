@@ -345,7 +345,7 @@ public abstract class Producer implements ProvenStatus {
 	}
 	
 
-	/**
+	/**  addBulkMessage()
 	 * Sends the provided provenance message to this producer's provenance exchange. Before sending
 	 * the message a check is made to ensure all message terms have been set, that is, they all have
 	 * non null values.
@@ -380,7 +380,42 @@ public abstract class Producer implements ProvenStatus {
 		
 	}
 	
+	
+	/**  getAdvancedTsQuery
+	 * Sends the provided provenance message to this producer's provenance exchange. Before sending
+	 * the message a check is made to ensure all message terms have been set, that is, they all have
+	 * non null values.
+	 * 
+	 * @param message
+	 *            the provenance message to send
+	 * 
+	 * @return true if the provenance message was sent
+	 * @throws Exception 
+	 * @throws NullTermValueException
+	 *             if a message term has a null value
+	 */ 
+	public ProvenResponse sendMessage(String message, ExchangeInfo exchangeInfo, String measurementName) throws Exception {
+
+		/*if(registration.provenContext.getProvenInfo().isSaveMessagesInFile())
+		{
+
+			//Files.write(Paths.get("./messages.txt"), message.generateJsonLd().getBytes());
+			PrintWriter out;
+			try {
+				out = new PrintWriter(new BufferedWriter(new FileWriter("messages.txt", true)));
+				out.println(message.getMessage());
+				out.close();	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+
+		}
+		else*/
+		return registration.provenSession.sendMessage(message, exchangeInfo, measurementName);
 		
+	}
+	
 	@Override
 	public Date createdDtm() {
 		return registration.getProvenSession().getSessionInfo().getCreatedDtm();

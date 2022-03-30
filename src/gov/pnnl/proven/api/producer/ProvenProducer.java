@@ -134,6 +134,12 @@ public class ProvenProducer extends Producer {
 
 	}
 
+	
+	public ProvenResponse getAdvancedTsQuery(String message, String measurementName) throws Exception {
+		return sendMessage(message, exchangeInfo, measurementName);
+
+	}
+	
 	public ProvenResponse sendMessage(String message, String requestId) throws Exception {
 
 		ProvenMessage pm;
